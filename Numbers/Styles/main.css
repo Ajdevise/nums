@@ -1,0 +1,138 @@
+:root {
+    --color-cta: #5BC4FB;
+    --color-cta-darker: #5B94FB;
+    --color-number-low: #6FEF49;
+    --color-number-medium: #BAF7E5;
+    --color-number-high: #F47474;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Montserrat;
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 75rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.input-section {
+    margin-top: 3rem;
+}
+
+.input-section > label { 
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+}
+
+.form-group > input {
+    flex: 100%;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: .2rem 1rem;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid rgba(119, 119, 119, .55);
+}
+
+.cta {
+    padding: .5rem 1rem .7rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: inherit;
+    border: none;
+    background-color: var(--color-cta);
+    color: white;
+    border-radius: 5px;
+    transition: all .2s;
+    cursor: pointer;
+
+}
+
+.cta:hover {
+    background-color: var(--color-cta-darker);
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.number-container {
+    border: 1px solid rgba(119, 119, 119, .25);
+    border-radius: 7px; 
+    overflow: hidden;
+}
+
+.number-display {
+    padding: 1rem;
+    text-align: center;
+    color: #111;
+}
+
+.number-display > #number {
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.number-display-low {
+    background-color: var(--color-number-low);
+}
+
+.number-display-medium {
+    background-color: var(--color-number-medium);
+}
+
+.number-display-high {
+    background-color: var(--color-number-high);
+}
+
+.number-stats {
+    padding: 1rem;
+}
+
+.number-stats > p:first-child {
+    margin-bottom: .4rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .numbers {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form-group {
+        flex-wrap: wrap;
+    }
+
+    .form-group > input {
+        padding: 1rem 1rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .form-group > button {
+        width: 100%;
+    }
+}
